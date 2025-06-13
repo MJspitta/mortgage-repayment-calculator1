@@ -1,61 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Mortgage repayment calculator</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
 
-  Mortgage Calculator
-  Clear All
+    <link rel="stylesheet" href="./styles.css" />
 
-  Mortgage Amount
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
 
-  Mortgage Term
+    <script
+      src="https://kit.fontawesome.com/be95f07fec.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="calculator-section">
+          <div class="calculator-header">
+            <h1>Mortgage Calculator</h1>
+            <span class="clear-all">Clear All</span>
+          </div>
+          <div class="mortgage-amount">
+            <p class="label-input">Mortgage Amount</p>
+            <div class="input-container">
+              <span>&#163;</span>
+              <input
+                type="number"
+                name="mortgage-amount"
+                id="mortgage-amount"
+              />
+            </div>
+          </div>
+          <div class="term-rate">
+            <div class="mortgage-term">
+              <p class="label-input">Mortgage Term</p>
+              <div class="input-container">
+                <input type="number" name="mortgage-term" id="mortgage-term" />
+                <span>years</span>
+              </div>
+            </div>
+            <div class="interest-rate">
+              <p class="label-input">Interest Rate</p>
+              <div class="input-container">
+                <input type="number" name="interest-rate" id="interest-rate" />
+                <span>%</span>
+              </div>
+            </div>
+          </div>
+          <div class="mortgage-type">
+            <p class="label-input">Mortgage Type</p>
+            <div class="m-type-radio">
+              <input type="radio" name="mortgage-type" id="repayment" />
+              <label for="repayment">Repayment</label>
+            </div>
+            <div class="m-type-radio">
+              <input type="radio" name="mortgage-type" id="interest-only" />
+              <label for="interest-only">Interest Only</label>
+            </div>
+          </div>
+          <button type="button" id="calculate-repayments-btn">
+            <i class="fa-solid fa-calculator"></i>Calculate Repayments
+          </button>
+        </div>
 
-  Interest Rate
+        <div class="display-section">
+          <div class="empty-results-display">
+            <img
+              src="./assets/images/illustration-empty.svg"
+              alt="empty illustration"
+            />
+            <h2>Results shown here</h2>
+            <p>
+              Complete the form and click “calculate repayments” to see what
+              your monthly repayments would be.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
 
-  Mortgage Type
-  Repayment
-  Interest Only
+    <!-- Empty results start -->
 
-  Calculate Repayments
+    <!-- Results shown here Complete the form and click “calculate repayments” to see
+    what your monthly repayments would be. -->
 
-  <!-- Empty results start -->
+    <!-- Empty results end -->
 
-  Results shown here
+    <!-- Completed results start -->
 
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
+    <!-- Your results Your results are shown below based on the information you
+    provided. To adjust the results, edit the form and click “calculate
+    repayments” again. Your monthly repayments Total you'll repay over the term -->
 
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- Completed results end -->
+  </body>
 </html>
