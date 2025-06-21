@@ -16,10 +16,12 @@ main {
   justify-content: center;
   align-items: center;
 }
-h1, h2 {
+h1,
+h2 {
   font-weight: 700;
 }
-p, span {
+p,
+span {
   font-weight: 500;
 }
 
@@ -51,6 +53,9 @@ h1 {
   color: hsl(200, 24%, 40%);
   text-decoration: underline;
 }
+.clear-all:hover {
+  color: hsl(202, 55%, 16%);
+}
 
 .mortgage-amount {
   width: 100%;
@@ -73,6 +78,9 @@ h1 {
   align-items: center;
   border-radius: 0.5rem;
 }
+.input-container:hover {
+  border: 2px solid hsl(202, 55%, 16%);
+}
 .input-container span {
   background-color: hsl(202, 86%, 94%);
   height: 100%;
@@ -82,10 +90,28 @@ h1 {
   padding: 0 1rem;
 }
 .input-container input {
-  flex:auto;
+  flex: 1;
   height: 100%;
   border: none;
+  outline: none;
   border-radius: 0.5rem;
+}
+.input-container:focus-within {
+  border-color: hsl(61 70% 52%);
+}
+.input-container:focus-within span {
+  background: hsl(61 70% 52%);
+}
+input:hover,
+.input-container:hover,
+.clear-all:hover,
+.m-type-radio:hover,
+.m-type-radio label:hover,
+button:hover {
+  cursor: pointer;
+}
+.m-type-radio:hover {
+  border: 1px solid hsl(61, 70%, 72%);
 }
 
 .term-rate {
@@ -97,7 +123,8 @@ h1 {
 .term-rate span {
   border-radius: 0 0.5rem 0.5rem 0;
 }
-.mortgage-term, .interest-rate {
+.mortgage-term,
+.interest-rate {
   width: 47%;
 }
 
@@ -115,11 +142,18 @@ h1 {
   align-items: center;
   border-radius: 0.5rem;
 }
+.m-type-radio:has(input[type="radio"]:checked) {
+  background-color: hsl(61, 70%, 95%);
+  border-color: hsl(61, 70%, 52%);
+}
+.m-type-radio:has(input[type="radio"]:checked) input[type="radio"] {
+  accent-color: hsl(61, 70%, 52%);
+}
 .m-type-radio label {
   font-weight: 700;
   color: hsl(202, 55%, 16%);
   margin-left: 1rem;
-  flex: auto;
+  flex: 1;
 }
 
 button {
@@ -134,10 +168,13 @@ button {
   color: hsl(202, 55%, 16%);
   font-size: 1.1rem;
 }
+button:hover {
+  background-color: hsl(61, 70%, 72%);
+}
 
 .display-section {
   width: 50%;
-  background-color: hsl(202, 55%, 16%);
+  background-color: hsl(200, 55%, 16%);
   color: white;
   border-radius: 0 1rem 1rem 4rem;
   display: flex;
@@ -159,4 +196,47 @@ button {
 }
 .empty-results-display p {
   color: hsl(203, 41%, 72%);
+}
+
+.complete-results-display {
+  display: none;
+  align-self: flex-start;
+  margin: 2rem;
+}
+
+.complete-results-display h2 {
+  margin-bottom: 2rem;
+}
+
+.complete-results-display p {
+  color: hsl(203, 41%, 72%);
+}
+
+.results-container {
+  border-top: 3px solid hsl(61, 70%, 52%);
+  border-radius: 0.5rem;
+  background-color: hsl(202, 55%, 12%);
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.monthly-repay-result {
+  font-size: 3rem;
+  color: hsl(61, 70%, 52%);
+}
+.total-repay-result {
+  font-size: 1.5rem;
+}
+
+hr {
+  margin: 1.5rem auto;
+  border: none;
+  border-top: 1px solid hsl(200, 24%, 40%);
+}
+
+.error {
+  font-size: 0.7rem;
+  color: hsl(4, 69%, 50%);
+  margin-top: 0.5rem;
+  display: none;
 }

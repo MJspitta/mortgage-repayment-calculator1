@@ -31,7 +31,7 @@
   <body>
     <main>
       <div class="container">
-        <div class="calculator-section">
+        <form id="calculator-section" class="calculator-section">
           <div class="calculator-header">
             <h1>Mortgage Calculator</h1>
             <span class="clear-all">Clear All</span>
@@ -46,6 +46,7 @@
                 id="mortgage-amount"
               />
             </div>
+            <span class="error">This field is required</span>
           </div>
           <div class="term-rate">
             <div class="mortgage-term">
@@ -54,6 +55,7 @@
                 <input type="number" name="mortgage-term" id="mortgage-term" />
                 <span>years</span>
               </div>
+              <span class="error">This field is required</span>
             </div>
             <div class="interest-rate">
               <p class="label-input">Interest Rate</p>
@@ -61,23 +63,25 @@
                 <input type="number" name="interest-rate" id="interest-rate" />
                 <span>%</span>
               </div>
+              <span class="error">This field is required</span>
             </div>
           </div>
           <div class="mortgage-type">
             <p class="label-input">Mortgage Type</p>
             <div class="m-type-radio">
-              <input type="radio" name="mortgage-type" id="repayment" />
+              <input type="radio" name="mortgage-type" id="repayment" value="repayment" />
               <label for="repayment">Repayment</label>
             </div>
             <div class="m-type-radio">
-              <input type="radio" name="mortgage-type" id="interest-only" />
+              <input type="radio" name="mortgage-type" id="interest-only" value="interest-only" />
               <label for="interest-only">Interest Only</label>
             </div>
+            <span class="error">This field is required</span>
           </div>
-          <button type="button" id="calculate-repayments-btn">
+          <button type="submit" id="calculate-repayments-btn">
             <i class="fa-solid fa-calculator"></i>Calculate Repayments
           </button>
-        </div>
+        </form>
 
         <div class="display-section">
           <div class="empty-results-display">
@@ -91,23 +95,25 @@
               your monthly repayments would be.
             </p>
           </div>
+          <div class="complete-results-display">
+            <h2>Your results</h2>
+            <p>
+              Your results are shown below based on the information you
+              provided. To adjust the results, edit the form and click
+              “calculate repayments” again.
+            </p>
+            <div class="results-container">
+              <p>Your monthly repayments</p>
+              <span class="monthly-repay-result"></span>
+              <hr>
+              <p>Total you'll repay over the term</p>
+              <span class="total-repay-result"></span>
+            </div>
+          </div>
         </div>
       </div>
     </main>
 
-    <!-- Empty results start -->
-
-    <!-- Results shown here Complete the form and click “calculate repayments” to see
-    what your monthly repayments would be. -->
-
-    <!-- Empty results end -->
-
-    <!-- Completed results start -->
-
-    <!-- Your results Your results are shown below based on the information you
-    provided. To adjust the results, edit the form and click “calculate
-    repayments” again. Your monthly repayments Total you'll repay over the term -->
-
-    <!-- Completed results end -->
+    <script src="./script.js"></script>
   </body>
 </html>
