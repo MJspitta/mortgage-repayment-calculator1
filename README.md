@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Mortgage Repayment Live Site](https://mjspitta.github.io/mortgage-repayment-calculator1/)
+- Solution URL: [Mortgage Repayment Calculator Solution](https://www.frontendmentor.io/solutions/mortgage-repayment-calculator-JQl-HXX7aQ)
+- Live Site URL: [Mortgage Repayment Calculator Live Site](https://mjspitta.github.io/mortgage-repayment-calculator1/)
 
 ## My process
 
