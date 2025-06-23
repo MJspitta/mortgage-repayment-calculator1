@@ -8,6 +8,8 @@ const completeElement = document.querySelector('.complete-results-display');
 const monthlyRepayment = document.querySelector('.monthly-repay-result');
 const totalRepayment = document.querySelector('.total-repay-result');
 
+const clearInputs = document.getElementById('clear-all');
+
 
 const checkFormValidity = () => {
   let isValid = true;
@@ -84,7 +86,7 @@ const handleInterestOnly = (principal, rate) => {
   return monthlyPayment;
 };
 
-console.log(handleRepayment(300000, 5.25, 25))
+
 
 formCalculator.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -94,15 +96,32 @@ formCalculator.addEventListener('submit', (e) => {
   const principal = parseFloat(mortgageAmount.value);
   const years = parseFloat(mortgageTerm.value);
   const rate = parseFloat(interestRate.value);
-  const type = document.querySelector('input[name="mortgageType"]:checked')?.value;
+  const type = document.querySelector('input[name="mortgage-type"]:checked').value;
 
   const monthly = type === 'repayment' ? handleRepayment(principal, rate, years) : handleInterestOnly(principal, rate);
 
-  const totalPayment = type === 'repayment' ? monthly * years * 12 : monthly * years * 12 + (type === 'interest-only' ? principal : 0);
+  const totalPayment = type === 'repayment' ? monthly * years * 12 : monthly * years * 12 + principal;
 
   monthlyRepayment.innerHTML = `&#163;${monthly.toFixed(2)}`;
   totalRepayment.innerHTML = `&#163;${totalPayment.toFixed(2)}`;
   emptyElement.style.display = 'none';
   completeElement.style.display = 'block';
 
+});
+
+clearInputs.addEventListener('click', () => {
+  formCalculator.reset();
+
+  document.querySelectorAll('.error').forEach(err => (err.style.display = 'none'));
+  document.querySelectorAll('.input-container').forEach(box => box.style.removeProperty('border-color'));
+  document.querySelectorAll('.input-container span').forEach(span => {
+    span.style.removeProperty('background');
+    span.style.removeProperty('color');
+  });
+
+  monthlyRepayment.textContent = '';
+  totalRepayment.textContent = '';
+
+  completeElement.style.display = 'none';
+  emptyElement.style.display = 'block';
 })

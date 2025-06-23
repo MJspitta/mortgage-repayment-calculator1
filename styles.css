@@ -52,9 +52,12 @@ h1 {
 .clear-all {
   color: hsl(200, 24%, 40%);
   text-decoration: underline;
+  background-color: white;
+  font-size: 1rem;
 }
 .clear-all:hover {
   color: hsl(202, 55%, 16%);
+  cursor: pointer;
 }
 
 .mortgage-amount {
@@ -156,7 +159,7 @@ button:hover {
   flex: 1;
 }
 
-button {
+.calculate-repayments-btn {
   padding: 0.8rem 5rem;
   font-weight: 700;
   display: flex;
@@ -168,7 +171,7 @@ button {
   color: hsl(202, 55%, 16%);
   font-size: 1.1rem;
 }
-button:hover {
+.calculate-repayments-btn:hover {
   background-color: hsl(61, 70%, 72%);
 }
 
